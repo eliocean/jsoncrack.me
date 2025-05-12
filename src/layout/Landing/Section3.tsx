@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   Button,
   Container,
@@ -12,7 +14,6 @@ import {
 } from "@mantine/core";
 import styled from "styled-components";
 import { LuBadgeCheck } from "react-icons/lu";
-import Link from "next/link";
 
 const StyledDottedContainer = styled.div`
   position: relative;
@@ -55,13 +56,16 @@ const StyledDottedContainer = styled.div`
 `;
 
 export const Section3 = () => {
+  const router = useRouter(); // 2. 获取 router 实例
+  const basePath = router.basePath || ""; // 3. 获取 basePath
+
   return (
     <Container size="xl" py="80">
       <Flex justify="center" gap="80" align="center">
         <StyledDottedContainer>
           <Image
             className="jc"
-            src="/assets/bf2-image.png"
+            src={`${basePath}/assets/bf2-image.png`}
             alt="json, csv, yaml, xml"
             loading="lazy"
           />

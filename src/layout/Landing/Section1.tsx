@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { Container, Image, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import styled from "styled-components";
 
@@ -41,6 +42,9 @@ const StyledImageWrapper = styled.div`
 `;
 
 export const Section1 = () => {
+  const router = useRouter(); // 2. 获取 router 实例
+  const basePath = router.basePath || ""; // 3. 获取 basePath
+
   return (
     <Container size="xl" py="80">
       <Title
@@ -90,7 +94,12 @@ export const Section1 = () => {
           }}
         >
           <StyledImageWrapper>
-            <Image src="/assets/step1-visual.png" pos="relative" w="100%" alt="upload" />
+            <Image
+              src={`${basePath}/assets/step1-visual.png`}
+              pos="relative"
+              w="100%"
+              alt="upload"
+            />
           </StyledImageWrapper>
           <Title ta="center" c="black" order={3}>
             Upload your data
@@ -110,7 +119,12 @@ export const Section1 = () => {
           }}
         >
           <StyledImageWrapper>
-            <Image src="/assets/step2-visual.png" pos="relative" w="100%" alt="visualize" />
+            <Image
+              src={`${basePath}/assets/step2-visual.png`}
+              pos="relative"
+              w="100%"
+              alt="visualize"
+            />
           </StyledImageWrapper>
           <Title ta="center" c="black" order={3}>
             Visualize your JSON
@@ -131,7 +145,12 @@ export const Section1 = () => {
           }}
         >
           <StyledImageWrapper>
-            <Image src="/assets/step3-visual.png" pos="relative" w="100%" alt="export image" />
+            <Image
+              src={`${basePath}/assets/step3-visual.png`}
+              pos="relative"
+              w="100%"
+              alt="export image"
+            />
           </StyledImageWrapper>
           <Title ta="center" c="black" order={3}>
             Export to image

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Link from "next/link";
 import { Image } from "@mantine/core";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const monaSans = localFont({
   src: "../assets/fonts/Mona-Sans.woff2",
@@ -37,6 +38,8 @@ interface LogoProps extends React.ComponentPropsWithoutRef<"div"> {
 
 export const JSONCrackLogo = ({ fontSize = "1.2rem", hideText, hideLogo, ...props }: LogoProps) => {
   const [isIframe, setIsIframe] = React.useState(false);
+  const router = useRouter(); // 2. 获取 router 实例
+  const basePath = router.basePath || ""; // 3. 获取 basePath
 
   useEffect(() => {
     setIsIframe(window !== undefined && window.location.href.includes("widget"));
@@ -47,7 +50,7 @@ export const JSONCrackLogo = ({ fontSize = "1.2rem", hideText, hideLogo, ...prop
       <StyledLogoWrapper>
         {!hideLogo && (
           <Image
-            src="/assets/192.png"
+            src={`${basePath}/assets/192.png`}
             loading="eager"
             width={parseFloat(fontSize) * 18}
             height={parseFloat(fontSize) * 18}
