@@ -27,7 +27,7 @@ const PageLayout = ({ children }: React.PropsWithChildren) => {
       <StyledLayoutWrapper>
         <Navbar />
         <ContentWrapper>{children}</ContentWrapper>
-        <Footer />
+        {/* <Footer /> */}
       </StyledLayoutWrapper>
     </ThemeProvider>
   );

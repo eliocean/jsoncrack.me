@@ -30,7 +30,7 @@ export default HomePage;
 
 export const getStaticProps = (async () => {
   try {
-    const res = await fetch("https://api.github.com/repos/AykutSarac/jsoncrack.com");
+    const res = await fetch("https://api.github.com/repos/eliocean/jsoncrack.me");
     const data = await res.json();
 
     return {

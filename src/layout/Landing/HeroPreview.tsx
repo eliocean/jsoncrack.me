@@ -1,11 +1,15 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { Container, Image } from "@mantine/core";
 
 export const HeroPreview = () => {
+  const router = useRouter(); // 2. 获取 router 实例
+  const basePath = router.basePath || ""; // 3. 获取 basePath
+
   return (
     <Container component="section" id="preview" fluid py="20" mx="lg">
       <Image
-        src="./assets/editor.webp"
+        src={`${basePath}/assets/editor.webp`}
         loading="eager"
         maw={1036}
         mx="auto"
