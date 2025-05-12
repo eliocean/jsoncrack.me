@@ -1,0 +1,40 @@
+server {
+    listen       80;
+    server_name  127.0.0.1;
+    root   html/jsoncrack;
+
+    # 静态资源目录，使用 alias
+    location /jsoncrack/_next/ {
+        alias  html/jsoncrack/_next/;
+    }
+    location /jsoncrack/assets/ {
+        alias  html/jsoncrack/assets/;
+    }
+    location /jsoncrack/type/ {
+        alias  html/jsoncrack/type/;
+    }
+    location /jsoncrack/converter/ {
+        alias  html/jsoncrack/converter/;
+    }
+    location /jsoncrack/legal/ {
+        alias  html/jsoncrack/legal/;
+    }
+    location /jsoncrack/tools/ {
+        alias  html/jsoncrack/tools/;
+    }
+
+    # 其它路径，优先查找文件或目录，找不到返回 index.html（适合 SPA）
+    location /jsoncrack {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /jsoncrack/editor {
+        try_files $uri /editor.html;
+    }
+    location /jsoncrack/widget {
+        try_files $uri /widget.html;
+    }
+    location /jsoncrack/docs {
+        try_files $uri /docs.html;
+    }
+}
