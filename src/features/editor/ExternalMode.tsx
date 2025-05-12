@@ -3,6 +3,7 @@ import { Anchor, Button, Group, Modal, Text } from "@mantine/core";
 import styled from "styled-components";
 import { VscCode } from "react-icons/vsc";
 import { VscArrowRight } from "react-icons/vsc";
+import Link from "next/link";
 
 const StyledAlert = styled.div`
   position: fixed;
@@ -80,7 +81,7 @@ const ExternalMode = () => {
         <Group pt="lg" justify="right">
           <Button
             onClick={closeModal}
-            component="a"
+            component={Link}
             href="https://jsoncrack.com"
             target="_blank"
             variant="outline"

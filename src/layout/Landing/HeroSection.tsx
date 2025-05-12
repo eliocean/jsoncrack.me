@@ -131,7 +131,7 @@ export const HeroSection = ({ stars = 0 }) => {
 
           <Flex gap="xs" wrap="wrap" justify="center" hiddenFrom="xs">
             <Button
-              component="a"
+              component={Link}
               color="#202842"
               href="/editor"
               size="md"
@@ -145,7 +145,7 @@ export const HeroSection = ({ stars = 0 }) => {
           </Flex>
           <Flex gap="lg" wrap="wrap" justify="center" visibleFrom="xs">
             <Button
-              component="a"
+              component={Link}
               color="#202842"
               href="/editor"
               size="xl"

@@ -23,6 +23,7 @@ import { FaPlay } from "react-icons/fa6";
 import { GoDependabot } from "react-icons/go";
 import { LuCheck, LuGitCompareArrows, LuInfinity, LuPencilRuler } from "react-icons/lu";
 import useConfig from "../../../store/useConfig";
+import Link from "next/link";
 
 export const UpgradeContent = (props: FlexProps) => {
   const darkmodeEnabled = useConfig(state => state.darkmodeEnabled);
@@ -250,13 +251,13 @@ export const UpgradeModal = ({ opened, onClose }: ModalProps) => {
             src={`/assets/td-${selectedFeature + 1}.webp`}
             w="100%"
             maw="385"
-            radius="md"
+            radius="md" 
             alt="upgrade"
             fit="contain"
           />
           <Group justify="center" gap="xs" mt="md">
             <Button
-              component="a"
+              component={Link}
               href="https://todiagram.com/editor?utm_source=jsoncrack&utm_medium=upgrade_modal"
               rel="noopener"
               target="_blank"

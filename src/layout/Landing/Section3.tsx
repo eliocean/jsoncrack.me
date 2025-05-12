@@ -12,6 +12,7 @@ import {
 } from "@mantine/core";
 import styled from "styled-components";
 import { LuBadgeCheck } from "react-icons/lu";
+import Link from "next/link";
 
 const StyledDottedContainer = styled.div`
   position: relative;
@@ -101,7 +102,7 @@ export const Section3 = () => {
             </SimpleGrid>
           </List>
           <Button
-            component="a"
+            component={Link}
             href="/converter/json-to-yaml"
             color="#202842"
             size="lg"

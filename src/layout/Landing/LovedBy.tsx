@@ -3,6 +3,7 @@ import { Button, Container, Flex, Text } from "@mantine/core";
 import styled from "styled-components";
 import CountUp from "react-countup";
 import { FaGithub, FaHackerNews, FaLinkedin, FaProductHunt, FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 interface LovedByProps {
   stars: number;
@@ -65,7 +66,7 @@ export const LovedBy = ({ stars }: LovedByProps) => {
       <Featured stars={stars} />
       <Flex wrap="wrap" justify="center" gap="md" mt="md">
         <Button
-          component="a"
+          component={Link}
           href="https://twitter.com/intent/post?text=Looking%20to%20understand%20or%20explore%20some%20JSON%3F%20Just%20paste%20or%20upload%20to%20visualize%20it%20as%20a%20graph%20with%20https%3A%2F%2Fjsoncrack.com%20%F0%9F%98%8D%20"
           target="_blank"
           color="black"
@@ -75,7 +76,7 @@ export const LovedBy = ({ stars }: LovedByProps) => {
           Share on X
         </Button>
         <Button
-          component="a"
+          component={Link}
           href="https://www.linkedin.com/feed/?shareActive=true&text=Looking%20to%20understand%20or%20explore%20some%20JSON%3F%20Just%20paste%20or%20upload%20to%20visualize%20it%20as%20a%20graph%20with%20https%3A%2F%2Fjsoncrack.com%20%F0%9F%98%8D%20"
           target="_blank"
           color="#0077B5"
