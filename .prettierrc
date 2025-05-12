@@ -4,6 +4,7 @@
   "semi": true,
   "printWidth": 100,
   "arrowParens": "avoid",
+  "endOfLine": "crlf",
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
